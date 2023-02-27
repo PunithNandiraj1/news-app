@@ -1,8 +1,13 @@
-import React from 'react'
+import { categories } from "../constants";
 
-function HomePage() {
+async function HomePage() {
+  //fetch news data
+  const news: NewsResponse = await fetchNews(categories.join(','));
   return (
-    <div>HomePage</div>
+    <div>
+
+
+    </div>
   )
 }
 
