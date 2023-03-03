@@ -1,4 +1,5 @@
 import {gql} from "graphql-request"
+import sortNewsByImage from "./sortNewsByImage";
 
 const fetchNews = async(
     category?: Category | string,
@@ -61,6 +62,10 @@ const fetchNews = async(
         console.log("Loading NEW DATA FROM API for category >>> ", category , keywords)
 
         const newsResponse = await res.json();
+
+        const news = sortNewsByImage(newsResponse.data.myQuery);
+
+        return news
 
 }
 
